@@ -264,12 +264,12 @@ const Portfolio = () => {
 
         {/* PROJETOS */}
         <section id="projetos" className="mb-32">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-16">
+          <div className="flex flex-wrap items-center justify-between gap-6 mb-16">
+            {/* Título */}
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 flex items-center gap-3">
-              <Layout className="text-gray-400" /> Projetos Selecionados 
+                <Layout className="text-gray-400" /> Projetos Criados
             </h2>
             
-            {/* BOTÃO VER GITHUB COMPLETO - Dinâmico */}
             <motion.a 
               whileHover={{ scale: 1.05, x: 5, backgroundColor: "#f3f4f6" }}
               whileTap={{ scale: 0.95 }}
@@ -359,7 +359,7 @@ const Portfolio = () => {
                       target="_blank" 
                       className="flex items-center gap-2 text-blue-600 font-bold border-b-2 border-blue-100 hover:border-blue-600 pb-0.5 transition-all"
                     >
-                      Acessar Demo <ArrowRight size={16} />
+                      Acessar <ArrowRight size={16} />
                     </motion.a>
                   </div>
                 </div>
