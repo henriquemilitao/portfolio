@@ -4,8 +4,7 @@ import React from 'react';
 import { Github, Linkedin, Mail, ArrowRight, Download, ExternalLink, Code2, Heart, Coffee, Terminal, Database, Sparkles, Server, Layers, RefreshCcw, Users, Zap, Target, Cpu, ShieldCheck, GitBranch, Layout } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Foto from '../public/social 2.png';
-import Teste from '../public/teste6.png';
+import Foto from '../public/foto.png';
 import imageFinanca from '../public/financas.png';
 import fastFood from '../public/fast-food.png';
 import breakingBad from '../public/breaking-bad.png';
@@ -25,7 +24,7 @@ const Portfolio = () => {
     {
       title: 'FSW Donalds',
       description: 'Sistema de pedidos completo. Desafio técnico de integrar pagamentos reais (Stripe) e gerenciar estados complexos de carrinho.',
-      tech: ['Next.js 15', 'Stripe', 'Tailwind', 'Zustand'],
+      tech: ['Next.js 15', 'Stripe', 'Tailwind', 'Context API'],
       demoUrl: 'https://fsw-donalds-eta.vercel.app',
       repoUrl: 'https://github.com/henriquemilitao/fsw-donalds',
       tag: 'E-commerce',
@@ -139,7 +138,7 @@ const Portfolio = () => {
              <div className="absolute -inset-3 bg-gradient-to-r from-blue-600 to-blue-600 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
              <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                 <Image 
-                  src={Teste}
+                  src={Foto}
                   alt="Henrique"
                   fill
                   className="object-cover"
@@ -221,7 +220,7 @@ const Portfolio = () => {
             whileInView={{ opacity: 1, x: 0 }}
             className="text-xl font-bold text-gray-500 uppercase tracking-wider mb-8 flex items-center gap-2 pl-2"
           >
-            <Sparkles size={16} className="text-blue-600" /> Sobre & Perfil Técnico
+            <Sparkles size={16} className="text-blue-600" /> Sobre & Stack
           </motion.h2>
           
           <motion.div 
@@ -245,7 +244,7 @@ const Portfolio = () => {
                 <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-blue-600">
                   <Terminal size={24} />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Engenheiro Full Stack</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Engenheiro / Desenvolvedor Full Stack</h3>
                 <p className="text-gray-600 leading-relaxed text-lg">
                   Formado pela UFMS. Minha abordagem é prática: priorizo a <strong>resolução do problema</strong> acima da ferramenta.
                   Gosto de entender o negócio para criar a melhor solução técnica. Se existe um problema, eu dou um jeito de resolver, seja no Back, no Front ou no Banco.
@@ -286,7 +285,7 @@ const Portfolio = () => {
                     </div>
                     <div className="flex flex-wrap gap-2">
                         {["Next.js", "React", "Node.js", "NestJS", "TypeScript", "PostgreSQL", "Docker", "Git"].map((tech) => (
-                            <span key={tech} className="px-3 py-1.5 bg-blue-600/20 text-blue-300 border border-blue-500/30 rounded-lg text-sm font-semibold">
+                            <span key={tech} className="px-3 py-1.5 bg-blue-600/20 text-blue-300 border border-blue-500/30 rounded-lg text-sm font-semibold hover:border-blue-500 hover:bg-blue-500 hover:text-white transition duration-200">
                                 {tech}
                             </span>
                         ))}
@@ -442,7 +441,7 @@ const Portfolio = () => {
                             target="_blank" 
                             className="flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors ml-auto"
                           >
-                             Live Demo <ArrowRight size={16} />
+                             Acessar <ArrowRight size={16} />
                           </motion.a>
                        </div>
                     </div>
@@ -463,13 +462,13 @@ const Portfolio = () => {
             </div>
 
             <div className="flex gap-6">
-               <motion.a whileHover={{ scale: 1.2, rotate: 5, transition: { duration: 0.2 } }} href="https://github.com/henriquemilitao" className="text-gray-400 hover:text-white transition-colors">
+               <motion.a whileHover={{ scale: 1.2, rotate: 5, transition: { duration: 0.2 } }} href="https://github.com/henriquemilitao" className="text-gray-400 hover:text-white transition-colors" target="_blank" >
                  <Github size={24} />
                </motion.a>
-               <motion.a whileHover={{ scale: 1.2, rotate: -5, transition: { duration: 0.2 } }} href="https://linkedin.com/in/henrique-militao" className="text-gray-400 hover:text-blue-400 transition-colors">
+               <motion.a whileHover={{ scale: 1.2, rotate: -5, transition: { duration: 0.2 } }} href="https://linkedin.com/in/henrique-militao" className="text-gray-400 hover:text-blue-400 transition-colors" target="_blank">
                  <Linkedin size={24} />
                </motion.a>
-               <motion.a whileHover={{ scale: 1.2, rotate: 5, transition: { duration: 0.2 } }} href="mailto:henriquemilitao35@gmail.com" className="text-gray-400 hover:text-red-400 transition-colors">
+               <motion.a whileHover={{ scale: 1.2, rotate: 5, transition: { duration: 0.2 } }} href="mailto:henriquemilitao35@gmail.com" className="text-gray-400 hover:text-red-400 transition-colors" target="_blank">
                  <Mail size={24} />
                </motion.a>
             </div>
