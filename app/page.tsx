@@ -257,7 +257,7 @@ const Portfolio = () => {
               variants={itemFadeUp} 
               whileHover={hoverSpring}
               whileTap={tapSpring}
-              className="bg-blue-600 p-8 rounded-3xl shadow-lg shadow-blue-600/20 flex flex-col justify-center items-center text-center cursor-pointer text-white relative overflow-hidden group"
+              className="bg-blue-600 p-8 rounded-3xl shadow-lg shadow-blue-600/20 flex flex-col justify-center items-center text-center cursor-pointer text-white relative overflow-hidden group hover:shadow-xl transition-shadow duration-300"
               onClick={() => window.open('/curriculo.pdf', '_blank')}
             >
                <div className="absolute inset-0 bg-gradient-to-tr from-blue-700 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -268,8 +268,9 @@ const Portfolio = () => {
 
             {/* Card 3: A NOVA STACK (2 Colunas - Destaque + Background) */}
             <motion.div 
-                variants={itemFadeUp} 
-                className="md:col-span-2 bg-gray-900 p-8 rounded-3xl shadow-xl text-white flex flex-col justify-center relative overflow-hidden group"
+                variants={itemFadeUp}
+                whileHover={hoverSpring}
+                className="md:col-span-2 bg-gray-900 p-8 rounded-3xl shadow-xl text-white flex flex-col justify-center relative overflow-hidden group hover:shadow-2xl transition-shadow duration-300"
             >
                {/* Background decorativo */}
                <div className="absolute right-0 top-0 p-4 opacity-5">
