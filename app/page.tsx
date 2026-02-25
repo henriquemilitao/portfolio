@@ -9,16 +9,29 @@ import imageFinanca from '../public/financas.png';
 import fastFood from '../public/fast-food.png';
 import breakingBad from '../public/breaking-bad.png';
 
+import saasConstrucao from '../public/saas-sua-obra.png'; // Coloque o print do seu SaaS na pasta public
+import lpConstrutora from '../public/lp-construtora.png';   // Print da LP da Construtora
+import lpIngles from '../public/lp-ingles.png';             // Print da LP do Curso
+
 const Portfolio = () => {
   // --- DADOS ---
-  const projects = [
+const projects = [
+    {
+      title: 'SaaS Gestão de Obras',
+      description: 'Plataforma para construtoras atualizarem investidores. Destaque para a API em NestJS e integração segura com AWS S3 para armazenamento de mídias.',
+      tech: ['NestJS', 'AWS S3', 'React', 'PostgreSQL'],
+      demoUrl: 'https://sua-obra.vercel.app/', // Atualize o link
+      repoUrl: '', // Deixe vazio se não quiser mostrar o repo
+      tag: 'Backend / Cloud',
+      image: saasConstrucao
+    },
     {
       title: 'SaaS Financeiro',
       description: 'Plataforma de controle orçamentário. O foco foi criar uma lógica robusta de cálculo de budget no Backend para resolver um problema real.',
       tech: ['Next.js 15', 'TypeScript', 'Prisma', 'PostgreSQL'],
       demoUrl: 'https://custos-militao.vercel.app/',
       repoUrl: 'https://github.com/henriquemilitao/custos-militao',
-      tag: 'Highlight',
+      tag: 'Full Stack',
       image: imageFinanca
     },
     {
@@ -30,6 +43,25 @@ const Portfolio = () => {
       tag: 'E-commerce',
       image: fastFood
     },
+    {
+      title: 'LP Institucional (Construtora)',
+      description: 'Landing Page B2B de alta conversão. Foco em performance web, SEO técnico e design Mobile-First.',
+      tech: ['React', 'Next.js', 'TailwindCSS'],
+      demoUrl: 'https://sua-obra-invest.vercel.app/', // Atualize
+      repoUrl: '', // Deixe vazio se não quiser mostrar o repo
+      tag: 'Presença Digital',
+      image: lpConstrutora
+    },
+    {
+      title: 'LP Captação (Curso de Idiomas)',
+      description: 'Página focada em captação de leads. Estrutura componentizada para fácil atualização de conteúdo pelo cliente.',
+      tech: ['Next.js', 'TailwindCSS', 'Componentização'],
+      demoUrl: 'https://max-fluence-lp.vercel.app/', // Atualize
+      repoUrl: '', 
+      tag: 'Presença Digital',
+      image: lpIngles
+    },
+    
     {
       title: 'DevMovies',
       description: 'Aplicação de consumo de API externa. Foco em estrutura de componentes e requisições assíncronas eficientes.',
@@ -246,8 +278,7 @@ const Portfolio = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">Engenheiro / Desenvolvedor Full Stack</h3>
                 <p className="text-gray-600 leading-relaxed text-lg">
-                  Formado pela UFMS. Minha abordagem é prática: priorizo a <strong>resolução do problema</strong> acima da ferramenta.
-                  Gosto de entender o negócio para criar a melhor solução técnica. Se existe um problema, eu dou um jeito de resolver, seja no Back, no Front ou no Banco.
+                  Atuo desenvolvendo soluções completas e escaláveis, construindo desde Landing Pages de alta conversão até <strong>produtos SaaS complexos</strong>. Minha abordagem é prática e "Language Agnostic": domino o ecossistema JavaScript (Node/Nest/React), mas priorizo a <strong>arquitetura correta e a resolução do problema de negócio</strong> acima da ferramenta.
                 </p>
               </div>
             </motion.div>
@@ -258,7 +289,7 @@ const Portfolio = () => {
               whileHover={hoverSpring}
               whileTap={tapSpring}
               className="bg-blue-600 p-8 rounded-3xl shadow-lg shadow-blue-600/20 flex flex-col justify-center items-center text-center cursor-pointer text-white relative overflow-hidden group hover:shadow-xl transition-shadow duration-300"
-              onClick={() => window.open('/curriculo.pdf', '_blank')}
+              onClick={() => window.open('/Curriculo 2.0.pdf', '_blank')}
             >
                <div className="absolute inset-0 bg-gradient-to-tr from-blue-700 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                <Download className="mb-3 relative z-10 group-hover:scale-110 transition-transform" size={32} />
@@ -285,8 +316,7 @@ const Portfolio = () => {
                         <h3 className="font-bold text-lg text-gray-200">Stack Principal</h3>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                        {["Next.js", "React", "Node.js", "NestJS", "TypeScript", "PostgreSQL", "Docker", "Git"].map((tech) => (
-                            <span key={tech} className="px-3 py-1.5 bg-blue-600/20 text-blue-300 border border-blue-500/30 rounded-lg text-sm font-semibold hover:border-blue-500 hover:bg-blue-500 hover:text-white transition duration-200">
+                      {["Node.js", "NestJS", "AWS (S3)", "PostgreSQL", "Docker", "Next.js", "React", "TypeScript"].map((tech) => (                            <span key={tech} className="px-3 py-1.5 bg-blue-600/20 text-blue-300 border border-blue-500/30 rounded-lg text-sm font-semibold hover:border-blue-500 hover:bg-blue-500 hover:text-white transition duration-200">
                                 {tech}
                             </span>
                         ))}
@@ -428,14 +458,20 @@ const Portfolio = () => {
                        </div>
 
                        <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
-                          <motion.a 
-                            whileHover={{ x: 3, transition: { type: "spring", stiffness: 400 } }}
-                            href={project.repoUrl} 
-                            target="_blank" 
-                            className="flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                             <Github size={18} /> Código
-                          </motion.a>
+                          {project.repoUrl ? (
+                            <motion.a 
+                              whileHover={{ x: 3, transition: { type: "spring", stiffness: 400 } }}
+                              href={project.repoUrl} 
+                              target="_blank" 
+                              className="flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors"
+                            >
+                              <Github size={18} /> Código
+                            </motion.a>
+                          ) : (
+                            <div className="flex items-center gap-2 text-sm font-semibold text-gray-400 cursor-not-allowed" title="Repositório privado do cliente">
+                              <ShieldCheck size={18} /> Privado
+                            </div>
+                          )}
                           <motion.a 
                             whileHover={{ x: 3, transition: { type: "spring", stiffness: 400 } }}
                             href={project.demoUrl} 
